@@ -265,44 +265,50 @@ namespace Lesson1
         static void Main(string[] args)
         {
 
-            int[] numbers = new int[2];
-            int len = 0;
+            int[] numbers = new int[1];
+            int len = 1;
+            int i = 0;
             while (true)
             {
                 Console.WriteLine("Введите число");
                 int myNumber = Convert.ToInt32(Console.ReadLine());
 
-                bool flag = false;
-                int i;
-                for (i = 0; i < len; i++)
-                {
-                    if (numbers[i] == myNumber)
-                    {
-                        flag = true;
-                    }
-                }
+                //bool flag = false;
+                
+                //for (i = 0; i < len; i++)
+                //{
+                //    if (numbers[i] == myNumber)
+                //    {
+                //        flag = true;
+                //    }
+                //}
 
 
-                if (flag == false)
-                {
-                    try
-                    {
+                //if (flag == false)
+                //{
+                //    try
+                //    {
                         numbers[i] = myNumber;
-                    }
-                    catch (IndexOutOfRangeException)
-                    {
+                i++;
+                    //}
+                    //catch (IndexOutOfRangeException)
+                    //{
                         int[] numbers1 = new int[len * 2];
                         for (int y = 0; y < numbers.Length; y++)
                         {
                             numbers1[y] = numbers[y];
-                            numbers = numbers1;
+                            
+                            
                         }
+                numbers = numbers1;
+                len++;
 
-                    }
-                    Console.WriteLine();
-                    len++;
-                    //FinalStringBuilder(myNumber.ToString());
-                }
+
+                //}
+                //Console.WriteLine();
+                //len++;
+                //FinalStringBuilder(myNumber.ToString());
+                //}
             }
         }
     }
