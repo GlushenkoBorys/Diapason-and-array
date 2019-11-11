@@ -300,7 +300,7 @@ namespace Lesson1
 
                     }
                     Console.WriteLine();
-                    //len++;
+                    len++;
                     FinalStringBuilder(myNumber.ToString());
                 }
             }
