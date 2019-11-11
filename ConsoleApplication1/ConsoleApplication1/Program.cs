@@ -266,49 +266,48 @@ namespace Lesson1
         {
 
             int[] numbers = new int[1];
-            int len = 1;
+            int len = 0;
+            int countArray = 1;
             int i = 0;
+            int j = 0;
             while (true)
             {
                 Console.WriteLine("Введите число");
                 int myNumber = Convert.ToInt32(Console.ReadLine());
 
-                //bool flag = false;
-                
-                //for (i = 0; i < len; i++)
-                //{
-                //    if (numbers[i] == myNumber)
-                //    {
-                //        flag = true;
-                //    }
-                //}
+                bool flag = false;
+
+                for (i = 0; i < len; i++)
+                {
+                    if (numbers[i] == myNumber)
+                    {
+                        flag = true;
+                    }
+                }
 
 
-                //if (flag == false)
-                //{
-                //    try
-                //    {
-                        numbers[i] = myNumber;
-                i++;
-                    //}
-                    //catch (IndexOutOfRangeException)
-                    //{
-                        int[] numbers1 = new int[len * 2];
+                if (flag == false)
+                {
+                    
+                   numbers[j] = myNumber;
+                   j++;
+
+                    if (j == countArray)
+                    {
+                        int[] numbers1 = new int[countArray * 2];
                         for (int y = 0; y < numbers.Length; y++)
                         {
                             numbers1[y] = numbers[y];
-                            
-                            
+
                         }
-                numbers = numbers1;
-                len++;
-
-
-                //}
-                //Console.WriteLine();
-                //len++;
-                //FinalStringBuilder(myNumber.ToString());
-                //}
+                        numbers = numbers1;
+                    } 
+                        
+                
+                countArray++;
+                len++;                             
+                FinalStringBuilder(myNumber.ToString());
+                }
             }
         }
     }
